@@ -3,6 +3,7 @@ import 'package:news/view/WebScreenView/components.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import '../../app_components.dart';
 import '../../model/article.dart';
+import '../SettingView/components.dart';
 
 class WebScreenView extends StatefulWidget {
   final Article article;
@@ -48,6 +49,13 @@ class _WebScreenViewState extends State<WebScreenView> {
           const BuildLoadingWidget(),
         ],
       ),
+      bottomNavigationBar: isPortrait
+          ? BuildWebViewBottomBar(
+              author: widget.article.author,
+              source: widget.article.source,
+              url: widget.article.url,
+            )
+          : const SizedBox(),
     );
   }
 }

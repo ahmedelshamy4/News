@@ -16,6 +16,7 @@ class ArticleViewModel extends ChangeNotifier {
   late SportsStates sportsStates;
   late HealthStates healthStates;
   late EntertainmentStates entertainmentStates;
+  late SearchingStates searchingStates;
 
   ///INITIALIZE STATES VALUE
   ArticleViewModel() {
@@ -26,6 +27,7 @@ class ArticleViewModel extends ChangeNotifier {
     sportsStates = SportsStates.InitialState;
     healthStates = HealthStates.InitialState;
     entertainmentStates = EntertainmentStates.InitialState;
+    searchingStates = SearchingStates.InitialState;
   }
 
   String? language;
@@ -60,6 +62,7 @@ class ArticleViewModel extends ChangeNotifier {
   List<Article>? _sportsArticles;
   List<Article>? _healthArticles;
   List<Article>? _entertainmentArticles;
+  List<Article>? _searchArticles;
 
   List<Article>? get topHeadlinesArticles => _topHeadlinesArticles;
 
@@ -73,12 +76,17 @@ class ArticleViewModel extends ChangeNotifier {
 
   List<Article>? get entertainmentArticles => _entertainmentArticles;
 
+  List<Article>? get searchArticles => _searchArticles;
+
   ErrorResult? _topHeadlineErrorResult;
   ErrorResult? _businessArticlesErrorResult;
   ErrorResult? _techErrorResult;
   ErrorResult? _sportsErrorResult;
   ErrorResult? _healthErrorResult;
   ErrorResult? _entertainmentErrorResult;
+  ErrorResult? _searchErrorResult;
+
+  ErrorResult? get searchErrorResult => _searchErrorResult;
 
   ErrorResult? get topHeadlineErrorResult => _topHeadlineErrorResult;
 
@@ -210,6 +218,29 @@ class ArticleViewModel extends ChangeNotifier {
         entertainmentStates = EntertainmentStates.ErrorState;
       });
     });
+    notifyListeners();
+  }
+
+  Future<void> getArticlesFromSearching({required String searchValue}) async {
+    searchingStates = SearchingStates.LoadingState;
+    notifyListeners();
+    if (searchValue.isNotEmpty) {
+      await _articleServicesImplementation
+          .getArticlesFromSearch(searchValue: searchValue)
+          .then(
+        (value) {
+          value.fold((left) {
+            _searchArticles = left;
+            searchingStates = SearchingStates.LoadedState;
+          }, (right) {
+            _entertainmentErrorResult = right;
+            searchingStates = SearchingStates.ErrorState;
+          });
+        },
+      );
+    } else {
+      searchingStates = SearchingStates.EmptyState;
+    }
     notifyListeners();
   }
 }

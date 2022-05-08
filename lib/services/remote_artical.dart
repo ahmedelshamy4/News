@@ -66,4 +66,32 @@ class ArticleServicesImplementation extends ArticleServices {
       return Right(errorResult);
     }
   }
+
+  @override
+  Future<Either<List<Article>, ErrorResult>> getArticlesFromSearch(
+      {required String searchValue}) async {
+    Uri url = Uri.parse('$searchBaseUrl?q=$searchValue&apiKey=$apiKey');
+    try {
+      http.Response response = await http.get(url);
+      if (response.statusCode == 200) {
+        Map<String, dynamic> jsonData = jsonDecode(response.body);
+        List<dynamic> data = jsonData['articles'];
+        List<Article> searchArticles =
+            data.map((e) => Article.fromRemoteJson(e)).toList();
+        return Left(searchArticles);
+      } else {
+        return Right(returnResponse(response));
+      }
+    } on SocketException {
+      ErrorResult errorResult = ErrorResult(
+          errorMessage: 'socketException'.tr(),
+          errorImage: 'assets/images/socket_error.png');
+      return Right(errorResult);
+    } on FormatException {
+      ErrorResult errorResult = ErrorResult(
+          errorMessage: 'formatException'.tr(),
+          errorImage: 'assets/images/format_error.png');
+      return Right(errorResult);
+    }
+  }
 }

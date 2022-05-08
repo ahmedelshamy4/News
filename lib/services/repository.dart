@@ -10,4 +10,7 @@ abstract class ArticleServices {
 
   Future<Either<List<Article>, ErrorResult>> getArticlesByCategory(
       {required String country, required String category});
+
+  Future<Either<List<Article>, ErrorResult>> getArticlesFromSearch(
+      {required String searchValue});
 }
