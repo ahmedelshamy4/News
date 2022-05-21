@@ -1,6 +1,6 @@
 
 # news
-<img src="NewsScreenShot/[onBoarding_1.jpeg](https://github.com/ahmedelshamy4/News/blob/master/NewsScreenShot/WhatsApp%20Image%202022-05-08%20at%208.26.50%20AM(1).jpeg)" width="20%"></img>
+<img src="NewsScreenShot/https://github.com/ahmedelshamy4/News/blob/master/NewsScreenShot/WhatsApp%20Image%202022-05-08%20at%208.26.50%20AM(1).jpeg" width="20%"></img>
 
 ![WhatsApp Image 2022-05-08 at 8 26 50 AM](https://user-images.githubusercontent.com/26741217/167294183-ed252dec-e817-45a3-96c4-aa1c3336704b.jpeg)
 ![WhatsApp Image 2022-05-08 at 8 26 50 AM(1)](https://user-images.githubusercontent.com/26741217/167294191-5092b614-3991-4f28-89dd-08e73df3ebd4.jpeg)
