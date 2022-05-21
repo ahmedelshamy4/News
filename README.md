@@ -11,10 +11,10 @@ News is the news application that shows the latest news in Egypt and United Stat
 ✨ Plugins and concepts:
 
   . <P> This project is built using MVVM architecture pattern with provider for state management</P>.
-   . Singleton design pattern to use database helper concept.
-   . Sqflite plugin for saving articles in local memory.
-   . Functional programming concept using dartz plugin for handling server errors and exceptions.
-       . Remote data from (https://newsapi.org/) api source.
+   .<P> Singleton design pattern to use database helper concept </P>.
+   . <P> Sqflite plugin for saving articles in local memory </P>.
+   . <P>Functional programming concept using dartz plugin for handling server errors and exceptions </P>.
+    .<P> Remote data from (https://newsapi.org/) api source</P>.
 
 ✨ App Features :
 
