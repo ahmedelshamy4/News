@@ -8,3 +8,4 @@ News is the news application that shows the latest news in Egypt and United Stat
 <img src="NewsScreenShot/save.jpeg" width="20%"></img>
 <img src="NewsScreenShot/seetings.jpeg" width="20%"></img>
 
+<img src="NewsScreenShot/homeEn.jpeg" width="20%"></img>
