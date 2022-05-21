@@ -8,3 +8,11 @@ News is the news application that shows the latest news in Egypt and United Stat
 <img src="NewsScreenShot/save.jpeg" width="20%"></img>
 <img src="NewsScreenShot/seetings.jpeg" width="20%"></img>
 <img src="NewsScreenShot/homeEn.jpeg" width="20%"></img>
+✨ Plugins and concepts:
+
+  .  This project is built using MVVM architecture pattern with provider for state management.
+   . Singleton design pattern to use database helper concept.
+   . Sqflite plugin for saving articles in local memory.
+   . Functional programming concept using dartz plugin for handling server errors and exceptions.
+       . Remote data from (https://newsapi.org/) api source.
+
