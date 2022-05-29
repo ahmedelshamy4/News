@@ -19,8 +19,8 @@ News is the news application that shows the latest news in Egypt and United Stat
 
 ✨ App Features :
 
-    Splash screen.
-    Support Arabic and English languages.
-    Search bar for searching about any news.
-    Possibility to save favorite articles.
-    Dark mode and Light mode.
+    .Splash screen.
+    .Support Arabic and English languages.
+    .Search bar for searching about any news.
+    .Possibility to save favorite articles.
+    .Dark mode and Light mode.
