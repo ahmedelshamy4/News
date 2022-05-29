@@ -24,7 +24,8 @@ class LayoutView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: _layoutScreen[context.select<BottomNavParProvider, int>(
-          (value) => value.bottomNavBarIndex)],
+        (value) => value.bottomNavBarIndex,
+      )],
       bottomNavigationBar: BuildBottomNavigationBar(
         selectedIndex: context.select<BottomNavParProvider, int>(
             (value) => value.bottomNavBarIndex),

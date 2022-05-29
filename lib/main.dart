@@ -27,12 +27,14 @@ void main() async {
     languagesList: <String>['ar', 'en', 'fr'],
     assetsDirectory: 'assets/langs/',
   );
-  return runApp(MultiProvider(
-    providers: MultiProviders.providers,
-    child: LocalizedApp(
-      child: const MyApp(),
+  return runApp(
+    MultiProvider(
+      providers: MultiProviders.providers,
+      child: LocalizedApp(
+        child: const MyApp(),
+      ),
     ),
-  ));
+  );
 }
 
 String setLanguage() {

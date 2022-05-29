@@ -1,10 +1,9 @@
-
 import 'package:http/http.dart';
 import 'package:news/core/server_exception.dart';
 
 import '../model/error_result.dart';
 
-ErrorResult returnResponse(Response response) {
+ErrorResult returnResponseError(Response response) {
   switch (response.statusCode) {
     case 400:
       return BadRequestException().errorResult();

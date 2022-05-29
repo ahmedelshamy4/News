@@ -85,12 +85,13 @@ class BuildBottomNavigationBar extends StatelessWidget {
           color: appGreyColor,
         ),
         BottomNavigationBar(
-            selectedFontSize: 0,
-            onTap: onClick,
-            currentIndex: selectedIndex,
-            items: items(
-              index: selectedIndex,
-            ))
+          selectedFontSize: 0,
+          onTap: onClick,
+          currentIndex: selectedIndex,
+          items: items(
+            index: selectedIndex,
+          ),
+        )
       ],
     );
   }

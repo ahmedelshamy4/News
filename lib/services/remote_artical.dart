@@ -23,7 +23,9 @@ class ArticleServicesImplementation extends ArticleServices {
             data.map((e) => Article.fromRemoteJson(e)).toList();
         return Left(articles);
       } else {
-        return Right(returnResponse(response));
+        return Right(
+          returnResponseError(response),
+        );
       }
     } on SocketException {
       ErrorResult errors = ErrorResult(
@@ -52,7 +54,7 @@ class ArticleServicesImplementation extends ArticleServices {
             data.map((e) => Article.fromRemoteJson(e)).toList();
         return Left(articles);
       } else {
-        return Right(returnResponse(response));
+        return Right(returnResponseError(response));
       }
     } on SocketException {
       ErrorResult errorResult = ErrorResult(
@@ -80,7 +82,7 @@ class ArticleServicesImplementation extends ArticleServices {
             data.map((e) => Article.fromRemoteJson(e)).toList();
         return Left(searchArticles);
       } else {
-        return Right(returnResponse(response));
+        return Right(returnResponseError(response));
       }
     } on SocketException {
       ErrorResult errorResult = ErrorResult(
